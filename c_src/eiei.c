@@ -105,22 +105,11 @@ int ei_x_decode_list_header(ei_x_buff* buf, int *arity)
 {
   return ei_decode_list_header(buf->buff, &buf->index, arity);
 }
-
-/* 
- * ei_decode_ei_term() returns 1 if term is decoded, 0 if term is OK,
- * but not decoded here and -1 if something is wrong.  ONLY changes
- * index if term is decoded (return value 1)!
- */
-
 int ei_x_decode_ei_term(ei_x_buff* buf, ei_term* term)
 {
   return ei_decode_ei_term(buf->buff, &buf->index, term);
 }
 
-
-/*
- * ei_print_term to print out a binary coded term
- */
 
 int ei_x_print_term(FILE *fp, ei_x_buff* buf)
 {
