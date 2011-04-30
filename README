@@ -3,8 +3,9 @@ EIEI
 
 EIEI is a small library that adds a set of convenience functions to Erlang's
 EI library. Erlang's EI library provides both encode and decode functions to
-encode and decode erlang terms. The ei_x variant of encode functions use a dynamic buffer. There is no equivalent ei_x set of functions that operate on an
-ei_x_buff structure.
+encode and decode erlang terms. The ei_x variant of encode functions use a
+dynamic buffer. There is no equivalent ei_x set of functions that operate on
+an ei_x_buff structure.
 
 This library primarily adds ei_x_decode_* functions as a conveniance.
 
