@@ -44,14 +44,9 @@ int ei_x_decode_trace(ei_x_buff* buf, erlang_trace *p);
 int ei_x_decode_tuple_header(ei_x_buff* buf, int *arity);
 int ei_x_decode_list_header(ei_x_buff* buf, int *arity);
 int ei_x_decode_ei_term(ei_x_buff* buf, ei_term* term);
+
 int ei_x_print_term(FILE *fp, ei_x_buff* buf);
 int ei_x_s_print_term(char** s, ei_x_buff* buf);
-
-/* -------------------------------------------------------------------- */
-/*            Encoding/decoding bugnums to GNU MP format                */
-/* -------------------------------------------------------------------- */
-
-/* If the user included <gmp.h> we supply some more functions */
 
 #if defined(__GNU_MP_VERSION) \
 	&& __GNU_MP_VERSION == 4 && __GNU_MP_VERSION_MINOR >= 1 
@@ -60,10 +55,6 @@ int ei_x_decode_bignum(ei_x_buff* buf, mpz_t obj);
 
 #endif /* __GNU_MP_VERSION */
 
-/* -------------------------------------------------------------------- */
-/*            Function definitions not documented FIXME                 */
-/* -------------------------------------------------------------------- */
-
 #ifndef VXWORKS
 int ei_x_decode_longlong(ei_x_buff* buf, EI_LONGLONG *p);
 int ei_x_decode_ulonglong(ei_x_buff* buf, EI_ULONGLONG *p);
@@ -71,14 +62,7 @@ int ei_x_decode_ulonglong(ei_x_buff* buf, EI_ULONGLONG *p);
 
 #ifdef USE_EI_UNDOCUMENTED
 
-/* 
- * Decode a list of integers into an integer array (i.e. even if it is
- * encoded as a string). count gets number of items in array.
- * See "decode_intlist.c".
- */
-
 int ei_x_decode_intlist(ei_x_buff* buf, long *a, int *count);
-
 int ei_x_decode_big(ei_x_buff* buf, erlang_big* p);
 
 #endif /* USE_EI_UNDOCUMENTED */
