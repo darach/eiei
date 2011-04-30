@@ -74,7 +74,7 @@ else
         CFLAGS      += -fno-strict-aliasing
 endif
 
-LIB       := -L$(SB_INSTALL_PATH)/lib64 -L$(OTP_INSTALL_PATH)/lib/erl_interface-$(ERL_INTERFACE_VSN)/lib -L$(UNITTEST_CPP_PATH)  -lerl_interface -lei -lnsl -lpthread -lUnitTest++
+LIB       := -L$(OTP_INSTALL_PATH)/lib/erl_interface-$(ERL_INTERFACE_VSN)/lib -L$(UNITTEST_CPP_PATH)  -lerl_interface -lei -lnsl -lpthread -lUnitTest++
 
 LIB_LINKLINE  =  $(LINK) -o lib$(TARGET).so -shared -Wl,-soname,lib$(TARGET).so $(OBJS) $(LIB)
 
